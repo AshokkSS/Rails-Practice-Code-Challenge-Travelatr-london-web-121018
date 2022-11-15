@@ -1,0 +1,11 @@
+<% @posts.each do |post| %>
+  <h1>
+    <%= post.title%>
+  </h1>
+  <ul>
+    <li>Review: <%= post.content%></li>
+    <li>Number of Likes: <%= post.likes%></li>
+    <li>Review left by: <%= link_to post.blogger.name,post.blogger%></li>
+    <li>Destination: <%= link_to post.destination.name,post.destination%></li>
+  </ul>
+<% end%>
