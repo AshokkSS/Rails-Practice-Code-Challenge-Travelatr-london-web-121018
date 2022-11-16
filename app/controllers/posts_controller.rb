@@ -24,8 +24,8 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to movies_url, status: :see_other,
-                            alert: "Movie successfully deleted!"
+    redirect_to posts_url, status: :see_other,
+                           alert: "Post successfully deleted!"
   end
 
   def edit

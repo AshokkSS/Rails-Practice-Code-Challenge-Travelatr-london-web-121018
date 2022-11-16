@@ -1,7 +1,17 @@
 <h1>
   <%=@bloggers.name%>
-  <ul>
-    <li><%=@bloggers.bio%></li>
-    <li><%=@bloggers.age%></li>
-  </ul>
 </h1>
+<ul>
+  <li>Bio: <%=@bloggers.bio%></li>
+  <li>Age: <%=@bloggers.age%></li>
+</ul>
+<%if @bloggers.post.present?%>
+  <h2>Posts made by user:</h2>
+  <%@bloggers.post.each do |post|%>
+    <li>Country: <%= post.destination.country%>
+      <ul>Location:<%=link_to post.destination.name,post.destination%></ul>
+      <ul>Post Name:<%= post.title%></ul>
+      <ul>Post Contnet:<%= post.content%></ul>
+    </li>
+  <%end%>
+<%end%>

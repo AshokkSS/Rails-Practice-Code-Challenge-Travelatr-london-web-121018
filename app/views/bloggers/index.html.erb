@@ -1,5 +1,5 @@
 <% @bloggers.each do |blogger| %>
   <h2>
-    <%= blogger.name%>
+    <%= link_to blogger.name,blogger%>
   </h2>
 <% end%>

@@ -4,3 +4,12 @@
     <li>Country: <%=@destinations.country%></li>
   </ul>
 </h1>
+<%if @destinations.post.present?%>
+  <h2>Posts for this Location:</h2>
+  <%@destinations.post.each do |post|%>
+    <li>Post made by: <%= link_to post.blogger.name,post.blogger%>
+      <ul>Post Title: <%= link_to post.title,post%></ul>
+      <ul>Post Content: <%= post.content%></ul>
+    </li>
+  <%end%>
+<%end%>
